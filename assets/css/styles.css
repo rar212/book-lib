@@ -99,6 +99,8 @@ body{
   background-color: var(--body-color);
   color: var(--text-color);
   line-height: 1.6;
+  overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 h1,h2,h3,p,ul{
@@ -163,6 +165,22 @@ img{
   background-color: var(--body-color);
 }
 
+.fade-in {
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /*========== NAV ==========*/
 
 
@@ -176,10 +194,6 @@ img{
 
 @media screen and (max-width: 767px){
 
-  :root {
-    --body-color-light: #f7bdf5; /* Light mode background color */
-    --body-color-dark: #2b033d; /* Dark mode background color */
-  }
 
   @media (prefers-color-scheme: light) {
     .nav__menu {
@@ -193,6 +207,11 @@ img{
     }
 
 
+  }
+
+  .about__img_6{
+    height: 300px;
+    opacity: 0.75;
   }
 
   .grid-container {
@@ -251,7 +270,6 @@ img{
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: .4s;
 }
 
 .nav__item{
@@ -616,6 +634,7 @@ img{
   .bd-container{
     margin-left: auto;
     margin-right: auto;
+
   }
 
   .home__img{
@@ -634,18 +653,7 @@ img{
     .home__container {
         height: 640px;
     }
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr; /* Create one column */
-      grid-template-rows: repeat(8, auto); /* Create eight rows */
-      gap: 10px; /* Adjust the gap between grid items */
-    }
-  
-    .grid-item {
-      flex-basis: auto;
-      grid-row: auto;
-      grid-column: auto;
-    }
+
 }
 
 @media screen and (max-width: 767px){
